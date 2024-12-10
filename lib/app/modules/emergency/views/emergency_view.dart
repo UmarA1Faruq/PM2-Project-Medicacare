@@ -39,7 +39,7 @@ class EmergencyView extends GetView<EmergencyController> {
             // Tombol Kontak Keluarga
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.yellow,
                 minimumSize: Size(double.infinity, 50),
               ),
               icon: Icon(Icons.phone),
