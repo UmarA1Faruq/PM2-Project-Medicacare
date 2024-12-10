@@ -66,4 +66,5 @@ class DefaultFirebaseOptions {
     projectId: 'pm2-medicacare',
     storageBucket: 'pm2-medicacare.firebasestorage.app',
   );
+
 }
