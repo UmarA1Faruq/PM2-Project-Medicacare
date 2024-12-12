@@ -1,41 +1,44 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:myapp/app/controllers/auth_controller.dart';
+import 'package:myapp/app/controllers/navigation_controller.dart';
+import 'package:myapp/app/widgets/bottom_nav_bar.dart';
 
-import 'app/routes/app_pages.dart';
-
-import 'package:firebase_core/firebase_core.dart';
-import 'app/utils/loading.dart';
-import 'firebase_options.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
+void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final CAuth = Get.put(AuthController(), permanent: true);
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MainPage(),
+    );
+  }
+}
+
+class MainPage extends StatelessWidget {
+  final NavigationController navCtrl = Get.put(NavigationController());
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<User?>(
-      stream: CAuth.streamAuthStatus,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.active) {
-          return GetMaterialApp(
-            title: "Application",
-            initialRoute: snapshot.data != null ? Routes.HOME : Routes.LOGIN,
-            getPages: AppPages.routes,
-          );
-        }
-        return Loading();
-      },
-    );
+    return Obx(() => Scaffold(
+          body: navCtrl.pages[navCtrl.currentIndex.value],
+          bottomNavigationBar: BottomNavBar(
+            currentIndex: navCtrl.currentIndex,
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.notifications), label: "Medication Reminders"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.monitor_heart), label: "Health Tracking"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.calendar_month), label: "Appointments"),
+                   BottomNavigationBarItem(
+                  icon: Icon(Icons.call_end_outlined), label: "Emergency Contacts"),
+            ],
+            onTap: navCtrl.changePage,
+          ),
+        ));
   }
 }
