@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp/app/controllers/navigation_controller.dart';
+import 'package:myapp/app/modules/login/views/login_view.dart';
 import 'package:myapp/app/widgets/bottom_nav_bar.dart';
 import 'package:myapp/app/widgets/custom_app_bar.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: LoginView(),
     );
   }
 }
