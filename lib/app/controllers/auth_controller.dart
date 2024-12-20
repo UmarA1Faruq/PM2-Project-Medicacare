@@ -37,3 +37,5 @@ class AuthController extends GetxController {
   void logout() {}
   void resetPassword() {}
 }
+
+// Yang Semangat Dong
