@@ -1,23 +1,32 @@
 import 'package:get/get.dart';
 
 class AppointmentsController extends GetxController {
-  //TODO: Implement AppointmentsController
+  var appointments = <Map<String, String>>[].obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
+    fetchAppointments();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void fetchAppointments() {
+    // Simulasi data janji temu
+    var fetchedAppointments = [
+      {'doctor': 'Dr. Haikal', 'date': '28 Nov 2024', 'time': '14:00'},
+      {'doctor': 'Dr. Afrando', 'date': '29 Nov 2024', 'time': '14:00'},
+      {'doctor': 'Dr. Tirta', 'date': '30 Nov 2024', 'time': '14:00'},
+      {'doctor': 'Dr. Choky', 'date': '31 Nov 2024', 'time': '14:00'},
+      {'doctor': 'Dr. Umar', 'date': '1 Nov 2024', 'time': '14:00'},
+    ];
+
+    appointments.assignAll(fetchedAppointments);
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  void addAppointment(Map<String, String> appointment) {
+    appointments.add(appointment);
   }
 
-  void increment() => count.value++;
+  void cancelAppointment(int index) {
+    appointments.removeAt(index);
+  }
 }

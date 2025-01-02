@@ -12,7 +12,7 @@ class NavigationController extends GetxController {
     HomeView(),
     const MedicationRemindersView(),
     const HealthTrackingView(),
-    const AppointmentsView(),
+    AppointmentsView(),
     const EmergencyContactsView(),
   ];
 

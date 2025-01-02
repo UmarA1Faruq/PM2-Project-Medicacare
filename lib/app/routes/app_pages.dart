@@ -53,7 +53,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.APPOINTMENTS,
-      page: () => const AppointmentsView(),
+      page: () =>  AppointmentsView(),
       binding: AppointmentsBinding(),
     ),
     GetPage(
