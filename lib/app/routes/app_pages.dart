@@ -43,7 +43,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MEDICATION_REMINDERS,
-      page: () => const MedicationRemindersView(),
+      page: () => MedicationRemindersView(),
       binding: MedicationRemindersBinding(),
     ),
     GetPage(
