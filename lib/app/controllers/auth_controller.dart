@@ -34,7 +34,11 @@ class AuthController extends GetxController {
     }
   }
 
-  void logout() {}
+  void logout() async {
+    await auth.signOut();
+    Get.offAllNamed(Routes.LOGIN);
+  }
+
   void resetPassword() {}
 }
 
