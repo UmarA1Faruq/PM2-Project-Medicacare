@@ -11,6 +11,7 @@ abstract class Routes {
   static const APPOINTMENTS = _Paths.APPOINTMENTS;
   static const EMERGENCY_CONTACTS = _Paths.EMERGENCY_CONTACTS;
   static const SPLASH_SCREEN = _Paths.SPLASH_SCREEN;
+  static const PROFILE = _Paths.PROFILE;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const APPOINTMENTS = '/appointments';
   static const EMERGENCY_CONTACTS = '/emergency-contacts';
   static const SPLASH_SCREEN = '/splash-screen';
+  static const PROFILE = '/profile';
 }

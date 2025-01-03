@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../modules/profile/views/profile_view.dart'; // Pastikan mengimport Get
+// Sesuaikan dengan path file ProfileView Anda
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -26,8 +30,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           icon: const Icon(Icons.person, color: Colors.white),
           onPressed: () {
-            // Tambahkan aksi untuk tombol ini
-            print("Profile Icon Pressed");
+            Get.to(() => ProfileView());
+            // Atau jika Anda tidak menggunakan GetX, bisa menggunakan:
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => const ProfileView()),
+            // );
           },
         ),
       ],
