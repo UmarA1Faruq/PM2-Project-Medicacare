@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:myapp/app/layouts/main_layout.dart';
 
 class AppointmentsView extends StatelessWidget {
   final List<Map<String, String>> appointments = [
@@ -11,35 +13,7 @@ class AppointmentsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        elevation: 2.0,
-        backgroundColor: Colors.blue,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
-              'Medicacare',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 16.0), // Menambahkan jarak ke kanan
-              child: IconButton(
-                icon: const Icon(Icons.person, color: Colors.white),
-                onPressed: () {
-                  // Tambahkan logika untuk profil pengguna
-                  print("Profile Icon Pressed");
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
+    return MainLayout(
       body: Column(
         children: [
           _buildHeader(),
@@ -69,7 +43,6 @@ class AppointmentsView extends StatelessWidget {
               },
             ),
           ),
-          _buildFooter(),
         ],
       ),
     );
@@ -96,41 +69,6 @@ class AppointmentsView extends StatelessWidget {
             },
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildFooter() {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      color: Colors.grey.shade200,
-      child: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: "Medication",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.monitor_heart),
-            label: "Health",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
-            label: "Appointments",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.call_end),
-            label: "Emergency",
-          ),
-        ],
-        type: BottomNavigationBarType.fixed,
-        onTap: (index) {
-          // Tambahkan logika untuk navigasi
-        },
       ),
     );
   }
