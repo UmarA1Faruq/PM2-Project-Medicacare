@@ -13,7 +13,7 @@ class NavigationController extends GetxController {
     MedicationRemindersView(),
     const HealthTrackingView(),
     AppointmentsView(),
-    const EmergencyContactsView(),
+    EmergencyContactsView(),
   ];
 
   void changePage(int index) {
