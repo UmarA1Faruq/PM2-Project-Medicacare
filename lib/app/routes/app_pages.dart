@@ -60,7 +60,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.EMERGENCY_CONTACTS,
-      page: () => const EmergencyContactsView(),
+      page: () => EmergencyContactsView(),
       binding: EmergencyContactsBinding(),
     ),
     GetPage(
