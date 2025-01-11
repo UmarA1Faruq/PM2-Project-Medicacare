@@ -1,23 +1,19 @@
-import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
-class HealthTrackingController extends GetxController {
-  //TODO: Implement HealthTrackingController
+class HealthTrackingController {
+  final TextEditingController bloodPressureController = TextEditingController();
+  final TextEditingController bloodSugarController = TextEditingController();
+  final TextEditingController weightController = TextEditingController();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void saveData() {
+    // Implementasi logika penyimpanan data
+    String bloodPressure = bloodPressureController.text;
+    String bloodSugar = bloodSugarController.text;
+    String weight = weightController.text;
+
+    // Untuk sementara, hanya mencetak nilai
+    print('Blood Pressure: $bloodPressure');
+    print('Blood Sugar: $bloodSugar');
+    print('Weight: $weight');
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

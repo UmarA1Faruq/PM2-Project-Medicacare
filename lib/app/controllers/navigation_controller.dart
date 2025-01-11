@@ -11,7 +11,7 @@ class NavigationController extends GetxController {
   final pages = [
     HomeView(),
     MedicationRemindersView(),
-    const HealthTrackingView(),
+    HealthTrackingView(),
     AppointmentsView(),
     EmergencyContactsView(),
   ];
