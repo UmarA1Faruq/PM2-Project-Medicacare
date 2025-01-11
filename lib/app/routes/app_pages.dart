@@ -50,7 +50,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.HEALTH_TRACKING,
-      page: () => const HealthTrackingView(),
+      page: () => HealthTrackingView(),
       binding: HealthTrackingBinding(),
     ),
     GetPage(
